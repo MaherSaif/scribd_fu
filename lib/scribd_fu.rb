@@ -251,7 +251,7 @@ module ScribdFu
         <script type="text/javascript">
           var scribd_doc = scribd.Document.getDoc(#{ipaper_id}, '#{ipaper_access_key}');
           #{js_params(options)}
-          #{capture(&block)}
+          #{capture(&block) if block_given?}
           scribd_doc.write("embedded_flash#{id}");
         </script>
       END
